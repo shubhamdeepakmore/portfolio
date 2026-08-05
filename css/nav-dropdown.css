@@ -4,18 +4,18 @@
 
 /* ── DROPDOWN NAV ─────────────────────────────────────────── */
 .nav-group { position: relative; display: flex; align-items: center; }
-.nav-group-btn { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #3D4A35; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px; padding: 0; transition: color .15s; -webkit-tap-highlight-color: transparent; }
+.nav-group-btn { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brand); background: transparent; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px; padding: 0; transition: color .15s; -webkit-tap-highlight-color: transparent; }
 .nav-group-btn:hover { color: #A8BBA2; }
 .nav-group-btn.active { color: var(--ink-deep); }
 .nav-chevron { font-size: 9px; transition: transform .2s; display: inline-block; }
 .nav-group-btn[aria-expanded="true"] .nav-chevron { transform: rotate(180deg); }
-.nav-link-plain { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #3D4A35; transition: color .15s; }
+.nav-link-plain { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brand); transition: color .15s; }
 .nav-link-plain:hover, .nav-link-plain.active { color: #A8BBA2; }
 .nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 12px 40px rgba(47,47,47,0.1); padding: 16px 8px 8px; min-width: 220px; opacity: 0; visibility: hidden; transition: opacity .2s; z-index: 200; }
 .nav-group:hover .nav-dropdown, .nav-group-btn[aria-expanded="true"] + .nav-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .nav-drop-link { display: block; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); padding: 10px 14px; border-radius: 4px; transition: background .15s, color .15s; }
 .nav-drop-link:hover { background: var(--paper-warm); color: var(--ink-deep); }
-.nav-card-btn { background: transparent; border: 1px solid #3D4A35; border-radius: 6px; padding: 7px 10px; cursor: pointer; color: #3D4A35; display: flex; align-items: center; transition: border-color .15s, color .15s; -webkit-tap-highlight-color: transparent; }
+.nav-card-btn { background: transparent; border: 1px solid var(--brand); border-radius: 6px; padding: 7px 10px; cursor: pointer; color: var(--brand); display: flex; align-items: center; transition: border-color .15s, color .15s; -webkit-tap-highlight-color: transparent; }
 .nav-card-btn:hover { border-color: #A8BBA2; color: #A8BBA2; }
 
 /* Mobile nav groups — hidden on desktop */

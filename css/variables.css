@@ -1,21 +1,69 @@
 :root {
-  /* Modern PMO Palette — confirmed with Shreya */
-  --ink: #A8BBA2;            /* Sage — accent / hero */
-  --ink-deep: #2F2F2F;       /* Graphite — primary text & headings */
-  --ink-soft: #B7A99A;       /* Taupe — secondary / supporting */
+  /* ── Modern PMO Palette · LIGHT (default) ──────────────────
+     Values here are the exact colours the site uses today, so
+     light mode is unchanged. Dark mode below only re-points the
+     same tokens to darker equivalents. ── */
+  --ink: #A8BBA2;            /* Sage — accent / hero (same in both modes) */
+  --ink-deep: #2F2F2F;       /* Graphite — headings */
+  --ink-soft: #B7A99A;       /* Taupe — secondary */
   --paper: #F5F5F2;          /* Off-white — page background */
   --paper-warm: #DAD7CD;     /* Stone — card / tile surfaces */
   --surface: #F5F5F2;
-  --text: #2F2F2F;           /* Graphite */
+  --text: #2F2F2F;           /* Graphite body text */
   --text-dim: #B7A99A;       /* Taupe */
-  --line: #DAD7CD;           /* Stone */
+  --line: #DAD7CD;           /* Stone borders */
   --line-soft: #E8E6E1;
   --accent: #A8BBA2;         /* Sage */
-  --dash-bg: #2F2F2F;        /* Graphite dashboard background */
+  --dash-bg: #2F2F2F;
+
+  /* Role tokens introduced for theming (light = today's colours) */
+  --section-alt: #E8E5DE;    /* alt section band background */
+  --interest-bg: #E8E4DC;    /* "Other Side" tile background */
+  --surface-deep: #3D4A35;   /* Dark Olive — dashboard panels, timeline cards, KPI band */
+  --surface-deep-hi: #4A5A3F;/* lifted olive — active timeline card */
+  --brand: #3D4A35;          /* Dark Olive used as TEXT / borders (nav links, labels, idx) */
+  --muted-olive: #6B7B5E;    /* soft olive detail text */
+  --on-deep: #F5F5F2;        /* light text that sits ON dark-olive surfaces (constant) */
+  --label-on-deep: #DAD7CD;  /* muted stone label on dark-olive surfaces */
+  --nav-bg: rgba(244,245,240,0.78);   /* frosted nav bar background */
+  --glass-card-bg: rgba(245,245,242,0.92); /* timeline float card (frosted) */
+
   --f-display: "Fraunces", Georgia, serif;
   --f-body: "Inter", -apple-system, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, monospace;
   --pad-x: clamp(24px, 5vw, 80px);
   --t-hero: clamp(52px, 9vw, 148px);
   --t-h2: clamp(32px, 4vw, 56px);
+
+  color-scheme: light;
+}
+
+/* ── Modern PMO Palette · DARK ──────────────────────────────
+   Only the tokens that must change are re-pointed. Sage accent
+   and the dashboard status colours (green/amber/red) stay the
+   same in both modes. ── */
+:root[data-theme="dark"] {
+  --ink-deep: #F1F0E9;       /* headings → soft off-white */
+  --ink-soft: #A8A294;
+  --paper: #171911;          /* page background → deep warm olive-charcoal */
+  --paper-warm: #24271D;     /* card / tile surfaces */
+  --surface: #171911;
+  --text: #E6E5DD;           /* body text → soft off-white */
+  --text-dim: #A8A294;
+  --line: #333829;
+  --line-soft: #2A2E20;
+  --dash-bg: #171911;
+
+  --section-alt: #1D2016;
+  --interest-bg: #1D2016;
+  --surface-deep: #2B3123;   /* olive panels lift above the page */
+  --surface-deep-hi: #353D2C;
+  --brand: #B9CBB2;          /* dark-olive-as-text → light sage-olive */
+  --muted-olive: #8FA085;
+  --on-deep: #F5F5F2;        /* unchanged — light text on dark panels */
+  --label-on-deep: rgba(245,245,242,0.72);
+  --nav-bg: rgba(23,25,17,0.72);
+  --glass-card-bg: rgba(30,33,24,0.92);
+
+  color-scheme: dark;
 }

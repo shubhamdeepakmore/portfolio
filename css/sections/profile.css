@@ -1,6 +1,6 @@
 
 .profile-body { display: grid; grid-template-columns: 220px 1fr; gap: 80px; align-items: start; }
 @media (max-width: 900px) { .profile-body { grid-template-columns: 1fr; gap: 32px; } }
-.profile-body aside .stamp { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #3D4A35; padding: 8px 0; border-top: 1px solid #3D4A35; border-bottom: 1px solid #3D4A35; text-align: center; }
+.profile-body aside .stamp { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brand); padding: 8px 0; border-top: 1px solid var(--brand); border-bottom: 1px solid var(--brand); text-align: center; }
 .profile-body p { font-size: 20px; line-height: 1.55; color: var(--text); max-width: 1000px; text-wrap: pretty; }
-.profile-body .drop::first-letter { font-family: var(--f-display); font-size: 4.2em; float: left; line-height: 0.85; padding: 6px 14px 0 0; color: #3D4A35; }
+.profile-body .drop::first-letter { font-family: var(--f-display); font-size: 4.2em; float: left; line-height: 0.85; padding: 6px 14px 0 0; color: var(--brand); }

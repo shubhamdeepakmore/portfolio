@@ -1,8 +1,8 @@
 
 /* SQCDPI Dashboard */
 .dash-switcher { display: inline-flex; gap: 4px; padding: 0; background: transparent; border: none; border-radius: 999px; margin-bottom: 24px; }
-.dash-switch-btn { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; color: #3D4A35; border: 1px solid #3D4A35; background: transparent; transition: color .2s; }
-.dash-switch-btn:hover { color: #F5F5F2; background: #3D4A35; }
+.dash-switch-btn { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; color: var(--brand); border: 1px solid var(--brand); background: transparent; transition: color .2s; }
+.dash-switch-btn:hover { color: #F5F5F2; background: var(--surface-deep); }
 .dash-switch-btn.active { color: #F5F5F2 !important; background: transparent; border-color: transparent; }
 .dash-panel .dash-switch-btn { color: rgba(245,245,242,0.5); border-color: rgba(245,245,242,0.25); }
 .dash-panel .dash-switch-btn:hover { color: #F5F5F2; background: rgba(245,245,242,0.1); }
@@ -12,7 +12,7 @@
 .sq-tile .sq-label { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,245,240,0.55); margin-bottom: 12px; }
 .sq-tile svg { width: 100%; max-width: 140px; height: auto; aspect-ratio: 1; display: block; margin: 0 auto; }
 .sq-tile .sq-stats { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(244,245,240,0.08); }
-.sq-tile .sq-count { font-family: var(--f-display); font-size: 22px; line-height: 1; color: var(--paper); }
+.sq-tile .sq-count { font-family: var(--f-display); font-size: 22px; line-height: 1; color: var(--on-deep); }
 .sq-tile .sq-count .sq-of { color: rgba(244,245,240,0.4); font-size: 16px; margin: 0 3px; }
 .sq-tile .sq-pct-line { font-family: var(--f-mono); font-size: 9px; color: rgba(244,245,240,0.55); margin-top: 6px; letter-spacing: 0.06em; }
 

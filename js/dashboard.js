@@ -72,12 +72,12 @@
     const ms=avg(ps.map(p=>p.kpi.ms)), risks=ps.reduce((s,p)=>s+p.kpi.risks,0);
     const budget=avg(ps.map(p=>p.kpi.budget));
     const items=[
-      {l:'Active Projects',v:ps.length,     sub:'in scope',           c:'var(--paper)'},
+      {l:'Active Projects',v:ps.length,     sub:'in scope',           c:'var(--on-deep)'},
       {l:'Avg SPI',        v:spi.toFixed(2), sub:spi>=1?'ahead of plan':'behind plan', c:ragColor(spi)},
       {l:'Avg CPI',        v:cpi.toFixed(2), sub:cpi>=1?'under budget':'over budget',  c:ragColor(cpi)},
-      {l:'Open RAID',      v:raid,           sub:risks+' high risks',  c:'var(--paper)'},
+      {l:'Open RAID',      v:raid,           sub:risks+' high risks',  c:'var(--on-deep)'},
       {l:'Milestones On Track', v:Math.round(ms)+'%', sub:'this quarter', c:ragColor(ms/100)},
-      {l:'Budget Used',    v:Math.round(budget)+'%', sub:'of approved',  c:'var(--paper)'}
+      {l:'Budget Used',    v:Math.round(budget)+'%', sub:'of approved',  c:'var(--on-deep)'}
     ];
     document.getElementById('dash-kpis').innerHTML = items.map(k=>'<div style="background:rgba(244,245,240,0.03);border:1px solid rgba(244,245,240,0.14);border-radius:4px;padding:16px;"><div style="'+mono+'font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,245,240,0.5);margin-bottom:8px;">'+k.l+'</div><div style="font-family:var(--f-display);font-size:26px;font-weight:400;color:'+k.c+';line-height:1;">'+k.v+'</div><div style="'+mono+'font-size:10px;color:rgba(244,245,240,0.4);margin-top:6px;">'+k.sub+'</div></div>').join('');
   }

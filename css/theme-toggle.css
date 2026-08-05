@@ -1,0 +1,62 @@
+/* ── LIQUID-GLASS DARK-MODE TOGGLE ─────────────────────────── */
+
+/* Toggle-specific colours, per theme */
+:root {
+  --tt-track-bg: rgba(168,187,162,0.30);
+  --tt-track-border: rgba(61,74,53,0.30);
+  --tt-knob-bg: #FBFBF7;
+  --tt-icon: #3D4A35;
+}
+:root[data-theme="dark"] {
+  --tt-track-bg: rgba(255,255,255,0.10);
+  --tt-track-border: rgba(255,255,255,0.22);
+  --tt-knob-bg: #E9E7DE;
+  --tt-icon: #2B3123;
+}
+
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0; background: none; border: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent; border-radius: 999px;
+}
+
+.tt-track {
+  position: relative; width: 58px; height: 30px; border-radius: 999px;
+  background: var(--tt-track-bg);
+  border: 1px solid var(--tt-track-border);
+  backdrop-filter: blur(8px) saturate(1.4);
+  -webkit-backdrop-filter: blur(8px) saturate(1.4);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.55),
+              inset 0 -2px 4px rgba(0,0,0,0.10),
+              0 2px 8px rgba(0,0,0,0.14);
+  transition: background .45s ease, border-color .45s ease;
+}
+
+.tt-knob {
+  position: absolute; top: 3px; left: 3px; width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--tt-knob-bg);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.28), inset 0 1px 1px rgba(255,255,255,0.7);
+  display: grid; place-items: center;
+  transition: transform .5s cubic-bezier(.68,-0.35,.32,1.4), background .45s ease;
+}
+:root[data-theme="dark"] .tt-knob { transform: translateX(28px); }
+
+.tt-icon {
+  position: absolute; width: 15px; height: 15px; color: var(--tt-icon);
+  transition: opacity .4s ease,
+              transform .5s cubic-bezier(.68,-0.35,.32,1.4),
+              color .45s ease;
+}
+.tt-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
+.tt-moon { opacity: 0; transform: rotate(90deg) scale(0.4); }
+:root[data-theme="dark"] .tt-sun  { opacity: 0; transform: rotate(-90deg) scale(0.4); }
+:root[data-theme="dark"] .tt-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+.theme-toggle:hover .tt-knob { box-shadow: 0 3px 8px rgba(0,0,0,0.32), inset 0 1px 1px rgba(255,255,255,0.8); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.theme-toggle:active .tt-knob { width: 27px; }  /* subtle liquid stretch on press */
+
+@media (prefers-reduced-motion: reduce) {
+  .tt-knob, .tt-icon, body { transition: none !important; }
+}
