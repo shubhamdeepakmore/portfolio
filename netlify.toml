@@ -6,19 +6,12 @@
   publish = "."
   # No build command: files are served exactly as they are in the repo.
 
-# Sensible caching: never cache HTML (so content updates show up
-# immediately), cache static assets for a day.
+# Caching: always revalidate HTML, CSS and JS so edits show up on the
+# next visit. Netlify sends an ETag, so unchanged files come back as a
+# tiny "304 Not Modified" — you get fresh content without re-downloading
+# files that didn't change. (This site has no build step / fingerprinted
+# filenames, so aggressive caching would serve stale styles.)
 [[headers]]
-  for = "/*.html"
+  for = "/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
-
-[[headers]]
-  for = "/css/*"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
-
-[[headers]]
-  for = "/js/*"
-  [headers.values]
-    Cache-Control = "public, max-age=86400"
