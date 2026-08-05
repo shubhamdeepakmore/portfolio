@@ -1,0 +1,21 @@
+:root {
+  /* Modern PMO Palette — confirmed with Shreya */
+  --ink: #A8BBA2;            /* Sage — accent / hero */
+  --ink-deep: #2F2F2F;       /* Graphite — primary text & headings */
+  --ink-soft: #B7A99A;       /* Taupe — secondary / supporting */
+  --paper: #F5F5F2;          /* Off-white — page background */
+  --paper-warm: #DAD7CD;     /* Stone — card / tile surfaces */
+  --surface: #F5F5F2;
+  --text: #2F2F2F;           /* Graphite */
+  --text-dim: #B7A99A;       /* Taupe */
+  --line: #DAD7CD;           /* Stone */
+  --line-soft: #E8E6E1;
+  --accent: #A8BBA2;         /* Sage */
+  --dash-bg: #2F2F2F;        /* Graphite dashboard background */
+  --f-display: "Fraunces", Georgia, serif;
+  --f-body: "Inter", -apple-system, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  --pad-x: clamp(24px, 5vw, 80px);
+  --t-hero: clamp(52px, 9vw, 148px);
+  --t-h2: clamp(32px, 4vw, 56px);
+}

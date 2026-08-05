@@ -1,0 +1,8 @@
+
+/* ── MODERN PMO PALETTE OVERRIDES ────────────────────────── */
+.dot { background: var(--accent) !important; }
+.num { color: var(--accent); }
+.suffix { color: var(--accent); }
+.ach-headline { color: var(--ink-deep); }
+.eyebrow { color: var(--accent); }
+.eyebrow::before { background: var(--accent); }

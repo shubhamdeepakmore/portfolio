@@ -1,0 +1,12 @@
+
+.ach-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; background: transparent; border: none; }
+@media (max-width: 700px) { .ach-grid { grid-template-columns: 1fr; } }
+.ach-card { background: #DAD7CD; padding: 48px 40px; position: relative; min-height: 320px; display: grid; grid-template-rows: auto 1fr; border-radius: 6px; transition: filter .2s; }
+.ach-card:hover { filter: brightness(0.97); }
+.ach-card .ach-headline { margin-top: 12px; }
+.ach-card .num-row { display: flex; align-items: baseline; gap: 10px; }
+.ach-card .num { font-family: var(--f-display); font-size: clamp(80px, 10vw, 144px); line-height: 0.9; color: #3D4A35; letter-spacing: -0.04em; }
+.ach-card .suffix { font-family: var(--f-display); font-size: clamp(36px, 4vw, 56px); color: #3D4A35; }
+.ach-card .ach-headline { font-family: var(--f-display); font-size: 22px; color: #3D4A35; font-weight: 500; margin-top: 0; max-width: 420px; }
+.ach-card > div:first-child { height: 220px; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 24px; }
+.ach-card .ach-detail { font-size: 15px; color: #6B7B5E; margin-top: 16px; max-width: 460px; line-height: 1.55; }

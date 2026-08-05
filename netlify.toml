@@ -1,0 +1,24 @@
+# Netlify configuration — plain static site, no build step.
+# The whole repository root IS the website, so we just tell
+# Netlify to publish it directly.
+
+[build]
+  publish = "."
+  # No build command: files are served exactly as they are in the repo.
+
+# Sensible caching: never cache HTML (so content updates show up
+# immediately), cache static assets for a day.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

@@ -1,0 +1,16 @@
+# ── Backups & working files ──────────────────────────────
+index.html.orig-backup
+*.orig-backup
+*.bak
+
+# ── OS cruft ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor / tooling ─────────────────────────────────────
+.claude/settings.local.json
+node_modules/
+
+# ── Logs ─────────────────────────────────────────────────
+*.log

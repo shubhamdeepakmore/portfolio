@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Aerospace Engineering to PMO — Shubham More</title>
+<meta name="description" content="What transferred, what didn't, and why I stopped worrying about the gap on paper.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #4E4D7E; --ink-deep: #2F2F55; --ink-soft: #7C7BA5;
+  --paper: #F4F5F0; --paper-warm: #EDEEE7; --surface: #FFFFFF;
+  --text: #1A1A22; --text-dim: #55556B;
+  --line: #DEDEE4; --line-soft: #EAEAEF; --accent: #C9A36B;
+  --f-display: "Fraunces", Georgia, serif;
+  --f-body: "Inter", -apple-system, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  --pad-x: clamp(24px, 5vw, 80px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--f-body); font-size: 16px; line-height: 1.7; color: var(--text); background: var(--paper); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(244,245,240,0.92); backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px var(--pad-x); }
+.nav-logo { font-family: var(--f-display); font-size: 18px; font-weight: 500; color: var(--ink-deep); display: flex; align-items: center; gap: 10px; }
+.nav-logo .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+.nav-back { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); transition: color .15s; }
+.nav-back:hover { color: var(--ink); }
+
+.article { max-width: 720px; margin: 0 auto; padding: 80px var(--pad-x) 120px; }
+
+.article-meta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px; }
+.article-meta .dot-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--line); }
+
+.article h1 { font-family: var(--f-display); font-size: clamp(36px, 6vw, 60px); font-weight: 400; line-height: 1.1; color: var(--ink-deep); letter-spacing: -0.02em; margin-bottom: 22px; }
+.article .subtitle { font-family: var(--f-display); font-size: clamp(20px, 2.5vw, 26px); font-weight: 400; line-height: 1.4; color: var(--ink); font-style: italic; margin-bottom: 32px; }
+.article .lede { height: 1px; background: var(--line); margin: 40px 0; }
+
+.article h2 { font-family: var(--f-display); font-size: 26px; font-weight: 500; color: var(--ink-deep); margin: 48px 0 18px; letter-spacing: -0.01em; }
+.article p { font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 22px; }
+.article p em { color: var(--ink); font-style: italic; }
+.article p strong { color: var(--ink-deep); font-weight: 600; }
+
+.article-foot { margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 24px; }
+.foot-author { display: flex; align-items: center; gap: 14px; }
+.foot-author .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--ink-deep); color: var(--paper); display: flex; align-items: center; justify-content: center; font-family: var(--f-display); font-size: 18px; }
+.foot-author .by { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 2px; }
+.foot-author .name { font-family: var(--f-display); font-size: 18px; color: var(--ink-deep); }
+.foot-author .role { font-size: 13px; color: var(--text-dim); }
+.foot-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.foot-cta a { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 12px 22px; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); transition: all .15s; }
+.foot-cta a:hover { background: var(--ink); color: var(--paper); }
+.foot-cta a.primary { background: var(--ink-deep); color: var(--paper); border-color: var(--ink-deep); }
+.foot-cta a.primary:hover { background: var(--ink); }
+
+@media (max-width: 600px) {
+  .article { padding: 50px var(--pad-x) 80px; }
+  .article h1 { font-size: 32px; }
+  .article .subtitle { font-size: 18px; }
+  .article p { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="dot"></span>Shubham More</a>
+    <a class="nav-back" href="articles.html">← All articles</a>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="article-meta">
+    <span>15 May 2026</span>
+    <span class="dot-sep"></span>
+    <span>4 min read</span>
+    <span class="dot-sep"></span>
+    <span>Career · PMO · Aerospace</span>
+  </div>
+  <h1>From Aerospace Engineering to PMO</h1>
+  <p class="subtitle">What transferred, what didn't, and why I stopped worrying about the gap on paper.</p>
+  <div class="lede"></div>
+  
+  <p>I graduated with a degree in Aerospace Engineering. Within a couple of years, I was working in a PMO. On paper, that looks like a pivot. In practice, it was less of a jump than it sounds.</p>
+<p>When people see "Aerospace Engineering" on a CV next to "Project Management Officer", the natural question is whether the technical degree was wasted, or whether the PMO role is a fallback. Neither is true — and unpacking why is, I think, useful for anyone navigating a similar transition.</p>
+<h2>What an engineering degree actually teaches you</h2>
+<p>Most aerospace engineering modules aren't about aircraft. They're about thinking systematically. Aerodynamics, propulsion, structures, materials, control systems — each one is a small lesson in the same underlying discipline: break a complex problem into manageable parts, model the parts well enough to be useful, and accept that the model is never the territory.</p>
+<p>You also learn to work with documentation that has to be right the first time. Engineering drawings, calculations, test reports — they're not narrative documents. They're traceable. Someone three years from now should be able to read what you wrote and understand exactly why you decided what you decided.</p>
+<p>That instinct for traceability turned out to be the single most useful thing I brought with me.</p>
+<h2>What PMO actually involves</h2>
+<p>A PMO role isn't administrative. Or rather, the administrative parts are the visible tip of something larger.</p>
+<p>The real job is keeping a programme honest. Scope, schedule, risk, change, dependency — these are all just structured ways of asking the same question: are we still on track to deliver what we said we'd deliver, and if not, what are we doing about it?</p>
+<p>The PMO is the part of the team that says <em>yes, but</em> and <em>what about</em>. Not to slow things down — but to make sure that progress is real and not just felt.</p>
+<h2>What transferred</h2>
+<p>Several things turned out to be more useful than I expected:</p>
+<p>*<em>Comfort with ambiguity in technical detail.</em>* Programme managers often need someone in the room who can read a technical document, ask the right question, and not be intimidated by jargon. An engineering background means I don't switch off when an engineer starts explaining something.</p>
+<p>*<em>The instinct to verify before reporting.</em>* In engineering, an unverified calculation is a liability. The same applies to PMO data. If I'm pulling numbers for a steer committee, I want to know where they came from, how stale they are, and whether the assumptions still hold. That discipline came from coursework, not from PMO training.</p>
+<p>*<em>Tolerance for documentation.</em>* Many people find programme documentation tedious. Engineers tend not to — or at least, we have a higher tolerance for it because we've been doing it since first year.</p>
+<p>*<em>Working backwards from constraints.</em>* Engineering problems often start with "given these constraints, design something that works". Programme planning is structurally the same. Given a deadline, a budget, and a set of dependencies, what's the actual achievable plan?</p>
+<h2>What didn't transfer</h2>
+<p>Some things had to be unlearned, or at least adapted:</p>
+<p>*<em>The temptation to over-engineer.</em>* Engineering rewards rigour. PMO rewards proportional rigour. Spending three hours perfecting a report that needed to be good enough in twenty minutes is a habit I had to actively break.</p>
+<p>*<em>Solo problem-solving.</em>* A lot of engineering coursework is individual. A lot of PMO work is collaborative. The skill of knowing when to ask, who to ask, and what to ask — that took longer to build.</p>
+<p>*<em>Comfort with uncertainty in people.</em>* Engineering models can be wrong, but they don't change their minds. People do. Programme work is mostly about people, and that took a different muscle.</p>
+<h2>What I'd tell someone making the same move</h2>
+<p>The thing nobody tells you is that the "career change" framing is largely an artefact of how we write CVs. In reality, the underlying skills — analytical thinking, attention to detail, structured communication, comfort with complexity — transfer fluidly between technical and programme roles.</p>
+<p>What matters less is the degree label. What matters more is whether you can sit in a meeting with engineers, finance, operations, and quality, follow all four conversations, and synthesise them into something a director can act on.</p>
+<p>If you can do that, your degree doesn't need to match your job title. It just needs to have taught you how to think.</p>
+  
+  <div class="article-foot">
+    <div class="foot-author">
+      <div class="avatar">SM</div>
+      <div>
+        <div class="by">Written by</div>
+        <div class="name">Shubham More</div>
+        <div class="role">Project Management Officer · Programme Controls &amp; Governance</div>
+      </div>
+    </div>
+    <div class="foot-cta">
+      <a href="articles.html">← More articles</a>
+      <a href="index.html" class="primary">Back to portfolio</a>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>

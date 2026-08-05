@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Tool Isn't the Skill — Shubham More</title>
+<meta name="description" content="Why knowing Power BI matters less than knowing what question to ask.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #4E4D7E; --ink-deep: #2F2F55; --ink-soft: #7C7BA5;
+  --paper: #F4F5F0; --paper-warm: #EDEEE7; --surface: #FFFFFF;
+  --text: #1A1A22; --text-dim: #55556B;
+  --line: #DEDEE4; --line-soft: #EAEAEF; --accent: #C9A36B;
+  --f-display: "Fraunces", Georgia, serif;
+  --f-body: "Inter", -apple-system, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, monospace;
+  --pad-x: clamp(24px, 5vw, 80px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--f-body); font-size: 16px; line-height: 1.7; color: var(--text); background: var(--paper); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(244,245,240,0.92); backdrop-filter: saturate(140%) blur(10px); border-bottom: 1px solid var(--line); }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 18px var(--pad-x); }
+.nav-logo { font-family: var(--f-display); font-size: 18px; font-weight: 500; color: var(--ink-deep); display: flex; align-items: center; gap: 10px; }
+.nav-logo .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+.nav-back { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); transition: color .15s; }
+.nav-back:hover { color: var(--ink); }
+
+.article { max-width: 720px; margin: 0 auto; padding: 80px var(--pad-x) 120px; }
+
+.article-meta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 24px; }
+.article-meta .dot-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--line); }
+
+.article h1 { font-family: var(--f-display); font-size: clamp(36px, 6vw, 60px); font-weight: 400; line-height: 1.1; color: var(--ink-deep); letter-spacing: -0.02em; margin-bottom: 22px; }
+.article .subtitle { font-family: var(--f-display); font-size: clamp(20px, 2.5vw, 26px); font-weight: 400; line-height: 1.4; color: var(--ink); font-style: italic; margin-bottom: 32px; }
+.article .lede { height: 1px; background: var(--line); margin: 40px 0; }
+
+.article h2 { font-family: var(--f-display); font-size: 26px; font-weight: 500; color: var(--ink-deep); margin: 48px 0 18px; letter-spacing: -0.01em; }
+.article p { font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 22px; }
+.article p em { color: var(--ink); font-style: italic; }
+.article p strong { color: var(--ink-deep); font-weight: 600; }
+
+.article-foot { margin-top: 80px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 24px; }
+.foot-author { display: flex; align-items: center; gap: 14px; }
+.foot-author .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--ink-deep); color: var(--paper); display: flex; align-items: center; justify-content: center; font-family: var(--f-display); font-size: 18px; }
+.foot-author .by { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 2px; }
+.foot-author .name { font-family: var(--f-display); font-size: 18px; color: var(--ink-deep); }
+.foot-author .role { font-size: 13px; color: var(--text-dim); }
+.foot-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.foot-cta a { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; padding: 12px 22px; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); transition: all .15s; }
+.foot-cta a:hover { background: var(--ink); color: var(--paper); }
+.foot-cta a.primary { background: var(--ink-deep); color: var(--paper); border-color: var(--ink-deep); }
+.foot-cta a.primary:hover { background: var(--ink); }
+
+@media (max-width: 600px) {
+  .article { padding: 50px var(--pad-x) 80px; }
+  .article h1 { font-size: 32px; }
+  .article .subtitle { font-size: 18px; }
+  .article p { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html"><span class="dot"></span>Shubham More</a>
+    <a class="nav-back" href="articles.html">← All articles</a>
+  </div>
+</nav>
+
+<article class="article">
+  <div class="article-meta">
+    <span>19 May 2026</span>
+    <span class="dot-sep"></span>
+    <span>3 min read</span>
+    <span class="dot-sep"></span>
+    <span>Skills · Tools · PMO</span>
+  </div>
+  <h1>The Tool Isn't the Skill</h1>
+  <p class="subtitle">Why knowing Power BI matters less than knowing what question to ask.</p>
+  <div class="lede"></div>
+  
+  <p>Most PMO job descriptions read like a tool inventory. Power BI, MS Project, Primavera, Jira, Smartsheet, Excel, Power Automate, SharePoint, Power Query. Sometimes Power Apps for good measure. The candidate who knows the most tools wins, presumably.</p>
+<p>I've spent the last few years actually doing PMO work, and I think this framing is mostly wrong. Not entirely wrong — tools matter — but wrong in emphasis. The harder, more valuable skill is the one almost no job description asks about: knowing what question the tool is trying to answer.</p>
+<h2>The "Power BI expert" problem</h2>
+<p>I know Power BI reasonably well. I've built dashboards that get used daily. But if you put me next to someone who's been certified to the hilt and knows every DAX function in the book, they will out-Power-BI me on every technical measure.</p>
+<p>What I've noticed, though, is that the dashboards that actually get used aren't built by the most technical people. They're built by the people who spent the most time understanding what the user needed before opening Power BI.</p>
+<p>The technical bit is genuinely the easier half. The harder half is everything before and after:</p>
+<p>- Who is this dashboard for? - What decision are they trying to make with it? - What's the smallest set of numbers that helps them make it? - What happens if the underlying data is wrong — do they know? Can they tell? - Will they actually open this dashboard, or is it going to sit in a folder unused?</p>
+<p>None of those questions are answered in a Power BI tutorial. They're answered by sitting with the user, asking what their morning looks like, and figuring out where the friction is.</p>
+<h2>Tools are interchangeable. Questions aren't.</h2>
+<p>A few years ago, the dominant PMO tool was Microsoft Project. Before that, Primavera. Power BI displaced Tableau in many shops. Smartsheet is now displacing both Excel and basic project trackers in others. Power Automate is starting to absorb work that used to live in macros.</p>
+<p>The tools rotate every few years. The question — <em>what does this team need to see, and how often</em> — doesn't.</p>
+<p>If you anchor your professional identity to a specific tool, you have to relearn yourself every five years. If you anchor it to a way of asking questions, the tools become details. You can pick up a new tool in a few weeks if the underlying question hasn't changed.</p>
+<h2>Why this matters for hiring</h2>
+<p>Job descriptions optimise for tool keywords because tools are easy to filter on. Atomic, verifiable, binary — either you've used Power BI or you haven't.</p>
+<p>But anyone who's worked in a PMO long enough knows the gap between "I've used Power BI" and "I've built something with Power BI that actually changed how the team works" is enormous. The first is a line on a CV. The second is a story about how you figured out what mattered.</p>
+<p>When I look at someone's experience, I'm less interested in the tool list than in two questions: have they built something that got used? And can they explain why someone used it?</p>
+<p>If they can, the tool was incidental. If they can't, the tool didn't save them.</p>
+<h2>What I try to do differently</h2>
+<p>I try to lead with the question, not the tool. When someone asks me to "build a Power BI dashboard", my first response is usually a set of questions about who, why, and how often. Not because I'm being awkward, but because the dashboard hasn't been designed yet — only the request has.</p>
+<p>That instinct slows things down at the start and speeds everything up after. It also means that when the tool changes — and it always changes — I don't have to start over. The dashboard might move from Power BI to Smartsheet to whatever comes next, but the underlying question stays the same.</p>
+<p>The skill isn't the tool. The skill is knowing what the tool is for.</p>
+  
+  <div class="article-foot">
+    <div class="foot-author">
+      <div class="avatar">SM</div>
+      <div>
+        <div class="by">Written by</div>
+        <div class="name">Shubham More</div>
+        <div class="role">Project Management Officer · Programme Controls &amp; Governance</div>
+      </div>
+    </div>
+    <div class="foot-cta">
+      <a href="articles.html">← More articles</a>
+      <a href="index.html" class="primary">Back to portfolio</a>
+    </div>
+  </div>
+</article>
+
+</body>
+</html>

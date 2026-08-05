@@ -1,0 +1,10 @@
+
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+@media (max-width: 800px) { .edu-grid { grid-template-columns: 1fr; gap: 48px; } }
+.edu-col h3 { font-family: var(--f-display); font-size: 24px; font-weight: 500; color: #3D4A35; margin-bottom: 24px; }
+.edu-item { padding: 24px 0; border-bottom: none; display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: start; }
+.edu-item .title { font-size: 17px; color: #3D4A35; font-weight: 500; margin-bottom: 6px; }
+.edu-item .issuer { font-size: 14px; color: #3D4A35; margin-bottom: 4px; }
+.edu-item .dtl { font-family: var(--f-mono); font-size: 11px; color: #3D4A35; }
+.edu-item .pill { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; background: var(--paper-warm); color: var(--ink); white-space: nowrap; }
+.edu-item .pill.progress { background: var(--ink); color: var(--paper); }
