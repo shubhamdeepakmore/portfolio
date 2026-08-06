@@ -1,17 +1,19 @@
-/* ── LIQUID-GLASS DARK-MODE TOGGLE ─────────────────────────── */
+/* ── GLASSMORPHISM DARK-MODE TOGGLE ────────────────────────── */
 
 /* Toggle-specific colours, per theme */
 :root {
-  --tt-track-bg: rgba(168,187,162,0.30);
-  --tt-track-border: rgba(61,74,53,0.30);
-  --tt-knob-bg: #FBFBF7;
-  --tt-icon: #3D4A35;
+  --tt-track: linear-gradient(145deg, rgba(255,255,255,0.65), rgba(200,214,196,0.42));
+  --tt-track-border: rgba(255,255,255,0.65);
+  --tt-knob: radial-gradient(circle at 32% 28%, #ffffff 0%, #eef1ea 70%, #e2e6dd 100%);
+  --tt-sun-color: #C98A2E;
+  --tt-moon-color: #3D4A35;
 }
 :root[data-theme="dark"] {
-  --tt-track-bg: rgba(255,255,255,0.10);
-  --tt-track-border: rgba(255,255,255,0.22);
-  --tt-knob-bg: #E9E7DE;
-  --tt-icon: #2B3123;
+  --tt-track: linear-gradient(145deg, rgba(90,104,128,0.42), rgba(18,24,34,0.55));
+  --tt-track-border: rgba(255,255,255,0.20);
+  --tt-knob: radial-gradient(circle at 32% 28%, #fbfcf9 0%, #dfe3d8 72%, #cfd4c6 100%);
+  --tt-sun-color: #C98A2E;
+  --tt-moon-color: #2B3123;
 }
 
 .theme-toggle {
@@ -20,43 +22,65 @@
   -webkit-tap-highlight-color: transparent; border-radius: 999px;
 }
 
+/* Frosted glass track */
 .tt-track {
-  position: relative; width: 58px; height: 30px; border-radius: 999px;
-  background: var(--tt-track-bg);
+  position: relative; width: 64px; height: 32px; border-radius: 999px;
+  background: var(--tt-track);
   border: 1px solid var(--tt-track-border);
-  backdrop-filter: blur(8px) saturate(1.4);
-  -webkit-backdrop-filter: blur(8px) saturate(1.4);
-  box-shadow: inset 0 1px 1px rgba(255,255,255,0.55),
-              inset 0 -2px 4px rgba(0,0,0,0.10),
-              0 2px 8px rgba(0,0,0,0.14);
-  transition: background .45s ease, border-color .45s ease;
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.16),
+              inset 0 1px 1px rgba(255,255,255,0.70),
+              inset 0 -3px 8px rgba(0,0,0,0.12);
+  transition: background .6s cubic-bezier(.4,0,.2,1), border-color .6s cubic-bezier(.4,0,.2,1);
 }
 
+/* Glossy glass knob (a little bead of glass) */
 .tt-knob {
-  position: absolute; top: 3px; left: 3px; width: 24px; height: 24px;
+  position: absolute; top: 3px; left: 3px; width: 26px; height: 26px;
   border-radius: 50%;
-  background: var(--tt-knob-bg);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.28), inset 0 1px 1px rgba(255,255,255,0.7);
+  background: var(--tt-knob);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.30),
+              inset 0 1.5px 2px rgba(255,255,255,0.95),
+              inset 0 -2px 3px rgba(0,0,0,0.14);
   display: grid; place-items: center;
-  transition: transform .5s cubic-bezier(.68,-0.35,.32,1.4), background .45s ease;
+  transition: transform .6s cubic-bezier(.4,0,.2,1), background .6s ease, width .18s ease;
 }
-:root[data-theme="dark"] .tt-knob { transform: translateX(28px); }
+:root[data-theme="dark"] .tt-knob { transform: translateX(32px); }
 
+/* Icons share one grid cell so they sit perfectly centred and overlap */
 .tt-icon {
-  position: absolute; width: 15px; height: 15px; color: var(--tt-icon);
-  transition: opacity .4s ease,
-              transform .5s cubic-bezier(.68,-0.35,.32,1.4),
-              color .45s ease;
+  grid-area: 1 / 1; width: 16px; height: 16px;
+  transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1), color .6s ease;
 }
-.tt-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
-.tt-moon { opacity: 0; transform: rotate(90deg) scale(0.4); }
-:root[data-theme="dark"] .tt-sun  { opacity: 0; transform: rotate(-90deg) scale(0.4); }
+.tt-sun  { color: var(--tt-sun-color);  opacity: 1; transform: rotate(0deg) scale(1); }
+.tt-moon { color: var(--tt-moon-color); opacity: 0; transform: rotate(60deg) scale(0.5); }
+:root[data-theme="dark"] .tt-sun  { opacity: 0; transform: rotate(-60deg) scale(0.5); }
 :root[data-theme="dark"] .tt-moon { opacity: 1; transform: rotate(0deg) scale(1); }
 
-.theme-toggle:hover .tt-knob { box-shadow: 0 3px 8px rgba(0,0,0,0.32), inset 0 1px 1px rgba(255,255,255,0.8); }
+.theme-toggle:hover .tt-track { box-shadow: 0 5px 18px rgba(0,0,0,0.20), inset 0 1px 1px rgba(255,255,255,0.75), inset 0 -3px 8px rgba(0,0,0,0.12); }
+.theme-toggle:active .tt-knob { width: 29px; }   /* subtle liquid stretch on press */
 .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.theme-toggle:active .tt-knob { width: 27px; }  /* subtle liquid stretch on press */
+
+/* ── SYNCHRONISED THEME CROSS-FADE ─────────────────────────────
+   While a theme switch is in progress, everything that changes
+   colour eases over the same duration as the knob, so the page
+   morphs together with the toggle instead of snapping first. The
+   class is added only during the switch (see js/theme.js), so it
+   never slows down normal hover interactions. ── */
+.theme-anim, .theme-anim *, .theme-anim *::before, .theme-anim *::after {
+  transition: background-color .6s cubic-bezier(.4,0,.2,1),
+              background .6s cubic-bezier(.4,0,.2,1),
+              color .6s cubic-bezier(.4,0,.2,1),
+              border-color .6s cubic-bezier(.4,0,.2,1),
+              fill .6s cubic-bezier(.4,0,.2,1),
+              box-shadow .6s cubic-bezier(.4,0,.2,1) !important;
+}
+/* keep the knob/icon motion (transform + opacity) alive during the switch */
+.theme-anim .tt-knob { transition: transform .6s cubic-bezier(.4,0,.2,1), background .6s ease !important; }
+.theme-anim .tt-icon { transition: opacity .5s ease, transform .6s cubic-bezier(.4,0,.2,1), color .6s ease !important; }
 
 @media (prefers-reduced-motion: reduce) {
-  .tt-knob, .tt-icon, body { transition: none !important; }
+  .tt-knob, .tt-icon, .tt-track,
+  .theme-anim, .theme-anim *, .theme-anim *::before, .theme-anim *::after { transition: none !important; }
 }

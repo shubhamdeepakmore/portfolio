@@ -1,7 +1,9 @@
 /* ── DARK-MODE TOGGLE ──────────────────────────────────────
    The initial theme is set by a tiny inline script in <head>
-   (before paint, so there's no flash). This just wires the
-   toggle button and remembers the choice. ── */
+   (before paint, so there's no flash). Default is LIGHT for every
+   device — the OS setting is intentionally ignored. This wires the
+   toggle, remembers the choice, and runs a synchronised cross-fade
+   so the whole page morphs together with the knob. ── */
 (function () {
   var root = document.documentElement;
   var btn = document.getElementById('themeToggle');
@@ -14,19 +16,14 @@
   }
   sync();
 
+  var timer;
   btn.addEventListener('click', function () {
     var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.classList.add('theme-anim');        // enable the synchronised cross-fade
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('theme', next); } catch (e) {}
     sync();
+    clearTimeout(timer);
+    timer = setTimeout(function () { root.classList.remove('theme-anim'); }, 650);
   });
-
-  // Follow the OS setting only while the user hasn't picked one explicitly.
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-      try { if (localStorage.getItem('theme')) return; } catch (_) {}
-      root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-      sync();
-    });
-  }
 })();
