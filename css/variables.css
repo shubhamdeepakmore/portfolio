@@ -29,7 +29,7 @@
   --glass-card-bg: rgba(245,245,242,0.92); /* timeline float card (frosted) */
 
   --f-display: "Fraunces", Georgia, serif;
-  --f-body: "Inter", -apple-system, sans-serif;
+  --f-body: "Literata", Georgia, serif;
   --f-mono: "JetBrains Mono", ui-monospace, monospace;
   --pad-x: clamp(24px, 5vw, 80px);
   --t-hero: clamp(52px, 9vw, 148px);
