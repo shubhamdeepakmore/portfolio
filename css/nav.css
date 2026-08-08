@@ -1,5 +1,5 @@
 
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(14px); background: var(--nav-bg); border-bottom: 1px solid transparent; transition: border-color .2s; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; backdrop-filter: blur(14px); background: var(--nav-bg); border-bottom: 1px solid transparent; transition: border-color .2s; transform: translateZ(0); will-change: transform; }
 .nav.scrolled { border-color: var(--line); }
 .nav-inner { max-width: 1440px; margin: 0 auto; padding: 16px var(--pad-x); display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .nav-logo { font-family: var(--f-display); font-size: 20px; font-weight: 500; color: var(--brand); display: flex; align-items: center; gap: 12px; }

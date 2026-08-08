@@ -4,7 +4,10 @@
    (position: sticky) and the scroll progress becomes the carousel
    position. See js/timeline.js. ── */
 
-#timeline.cf-track { position: relative; background: var(--paper); height: 370vh; padding: 0; margin: 0; }
+/* Total height = 100vh pinned view + scroll runway. Runway = (height - 100vh)
+   drives the 6 milestone transitions, so ~20vh of scroll per milestone. Keep
+   this modest so the section doesn't feel like a long dead-scroll stretch. */
+#timeline.cf-track { position: relative; background: var(--paper); height: 220vh; padding: 0; margin: 0; }
 
 .cf-sticky {
   position: sticky; top: 0; height: 100vh;
