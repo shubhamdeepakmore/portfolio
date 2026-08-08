@@ -327,6 +327,9 @@
           permitsPanel.style.display = 'none';
           sqcdpiPanel.style.display = '';
           renderSQCDPI();  // re-render on toggle in case fonts loaded late
+          // panel just became visible — nudge the sliding pills to re-align
+          // to their active buttons now that they finally have real dimensions
+          window.dispatchEvent(new Event('resize'));
         }
       });
     }

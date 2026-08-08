@@ -27,6 +27,16 @@
   --label-on-deep: #DAD7CD;  /* muted stone label on dark-olive surfaces */
   --nav-bg: rgba(244,245,240,0.78);   /* frosted nav bar background */
   --glass-card-bg: rgba(245,245,242,0.92); /* timeline float card (frosted) */
+  /* Clear-glass capsule (matches the timeline scrubber handle). "onlight" =
+     surfaces that are light in light mode / dark in dark mode (nav, dashboard
+     view switcher, skills filter); "ondark" = always-dark surfaces (dashboard
+     panel tabs). */
+  --capsule-onlight-fill: rgba(255,255,255,0.50);
+  --capsule-onlight-rim: rgba(255,255,255,0.85);
+  --capsule-onlight-hover: rgba(255,255,255,0.28);
+  --capsule-ondark-fill: rgba(255,255,255,0.13);
+  --capsule-ondark-rim: rgba(255,255,255,0.50);
+  --capsule-shadow: 0 4px 12px rgba(0,0,0,0.16), inset 0 1px 2px rgba(255,255,255,0.75), inset 0 -2px 5px rgba(0,0,0,0.10);
 
   --f-display: "Fraunces", Georgia, serif;
   --f-body: "Literata", Georgia, serif;
@@ -64,6 +74,12 @@
   --label-on-deep: rgba(245,245,242,0.72);
   --nav-bg: rgba(23,25,17,0.72);
   --glass-card-bg: rgba(30,33,24,0.92);
+  /* on now-dark surfaces the capsule becomes a subtle light frost */
+  --capsule-onlight-fill: rgba(255,255,255,0.16);
+  --capsule-onlight-rim: rgba(255,255,255,0.50);
+  --capsule-onlight-hover: rgba(255,255,255,0.06);
+  --capsule-ondark-fill: rgba(255,255,255,0.13);
+  --capsule-ondark-rim: rgba(255,255,255,0.50);
 
   color-scheme: dark;
 }
