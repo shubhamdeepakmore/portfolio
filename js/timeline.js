@@ -5,6 +5,7 @@
    drag, handle drag, side-card click) resolves to a scroll position,
    so nothing can desync. ── */
 (function () {
+  if (!window.matchMedia('(max-width: 768px)').matches) return;  // desktop → the card deck handles the Timeline
   var track = document.getElementById('timeline');
   var stage = document.getElementById('cfStage');
   if (!track || !stage) return;

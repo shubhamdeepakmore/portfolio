@@ -18,3 +18,4 @@ node_modules/
 # Playwright test output
 .playwright-mcp/
 *-2026-*.png
+.devserver.js
