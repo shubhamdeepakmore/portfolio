@@ -327,9 +327,10 @@
           permitsPanel.style.display = 'none';
           sqcdpiPanel.style.display = '';
           renderSQCDPI();  // re-render on toggle in case fonts loaded late
-          // panel just became visible — nudge the sliding pills to re-align
-          // to their active buttons now that they finally have real dimensions
-          window.dispatchEvent(new Event('resize'));
+          // The month-tabs pill inside this panel re-aligns itself: glass-pill's
+          // ResizeObserver fires as the panel goes from hidden (0 size) to visible.
+          // (We deliberately don't dispatch a global 'resize' here — that forced an
+          // *instant* reposition of the view-switcher pill too, killing its slide.)
         }
       });
     }

@@ -75,11 +75,16 @@
       paint(); animating = false; if (done) done();
     }, { once: true });
   }
+  // Scrubber jump: go straight to the target card (the first card of the
+  // chosen year) instead of stepping through every card in between. The
+  // deck re-stacks via each card's transform transition, so it reads as a
+  // direct jump rather than a run through the whole sequence.
   function goTo(target) {
     target = Math.max(0, Math.min(N - 1, target));
     if (animating || target === current) return;
-    var dir = target > current ? 1 : -1;
-    (function stepNext() { if (current === target) return; go(dir, stepNext); })();
+    current = target;
+    prevYearIdx = -1;          // force the year display + scrubber to re-sync
+    paint();
   }
   nextBtn.addEventListener('click', function () { go(1); });
   prevBtn.addEventListener('click', function () { go(-1); });

@@ -12,10 +12,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .container { max-width: 1440px; margin: 0 auto; padding: 0 var(--pad-x); }
 section { padding: var(--pad-section) 0; position: relative; }
-#profile { box-shadow: 0 -40px 0 0 var(--section-alt), 0 40px 0 0 var(--section-alt); }
+#profile { box-shadow: 0 -40px 0 0 var(--section-alt), 0 110px 0 0 var(--section-alt); }
 .section-alt { background: var(--section-alt); }
-.section-head { display: grid; grid-template-columns: 180px 1fr; gap: 40px; margin-bottom: 64px; align-items: start; }
-.section-head .idx { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.18em; color: var(--brand); padding-top: 12px; border-top: 1px solid var(--brand); }
+.section-head { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 64px; align-items: start; }
+.section-head .idx { display: none; }
 .section-head h2 { font-family: var(--f-display); font-size: var(--t-h2); font-weight: 400; letter-spacing: -0.02em; line-height: 1; color: var(--ink-deep); max-width: 800px; }
 .section-head .lead { margin-top: 16px; font-size: 17px; color: var(--brand); max-width: 680px; }
 @media (max-width: 700px) { .section-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; } }

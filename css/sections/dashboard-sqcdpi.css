@@ -1,9 +1,12 @@
 
 /* SQCDPI Dashboard */
 .dash-switcher { display: inline-flex; gap: 4px; padding: 0; background: transparent; border: none; border-radius: 999px; margin-bottom: 24px; }
-.dash-switch-btn { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; color: var(--brand); border: 1px solid var(--brand); background: transparent; transition: color .2s; }
+/* Inactive = muted with a faint rule; active = strong brand text over the
+   glass pill. The clear active/inactive contrast (plus the pill sitting on
+   the stone tray) makes the selected view unambiguous. */
+.dash-switch-btn { cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 18px; border-radius: 999px; color: var(--muted-olive); border: 1px solid var(--line); background: transparent; transition: color .2s; }
 .dash-switch-btn:hover { color: var(--brand); background: var(--capsule-onlight-hover); }
-.dash-switch-btn.active { color: var(--brand) !important; background: transparent; border-color: transparent; }
+.dash-switch-btn.active { color: var(--brand) !important; font-weight: 500; background: transparent; border-color: transparent; }
 .dash-panel .dash-switch-btn { color: rgba(245,245,242,0.5); border-color: rgba(245,245,242,0.25); }
 .dash-panel .dash-switch-btn:hover { color: #F5F5F2; background: rgba(245,245,242,0.1); }
 .dash-panel .dash-switch-btn.active { color: #F5F5F2; background: rgba(245,245,242,0.15); border-color: rgba(245,245,242,0.4); }

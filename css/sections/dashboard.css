@@ -6,6 +6,11 @@
 .dashboard .section-head .idx { color: var(--brand); border-top-color: var(--brand); }
 .dashboard .eyebrow { color: var(--brand); }
 .dashboard .section-head .lead { color: var(--brand); }
+/* Secondary tray sitting behind the whole dashboard box, so the view
+   switcher reads as a proper toggle on a surface (like the tabs inside the
+   dark panel) rather than floating on the page. Uses the stone tile token,
+   which themes with the rest of the site. */
+.dash-frame { background: var(--paper-warm); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
 .dash-panel { background: var(--surface-deep); border: 1px solid rgba(61,74,53,0.5); border-radius: 6px; padding: 32px; }
 .dash-bar { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid rgba(244,245,240,0.1); margin-bottom: 28px; flex-wrap: wrap; gap: 16px; }
 .dash-bar-left { display: flex; align-items: center; gap: 14px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--label-on-deep); }
