@@ -26,5 +26,10 @@
 .hero-foot .kpi-sub { color: rgba(245,245,242,0.5); }
 @media (max-width: 700px) { .hero-foot { grid-template-columns: repeat(2, 1fr); } }
 .kpi-cell .kpi-num { font-family: var(--f-display); font-size: 54px; line-height: 1; color: #F5F5F2; letter-spacing: -0.02em; }
+/* morph icon inside the (dark) hero stat band — sized to the KPI number,
+   light stroke so it reads on the olive band */
+.hero-foot .kpi-num .morph-icon { justify-content: center; }
+.hero-foot .kpi-num .morph-icon svg { width: 46px; height: 46px; }
+.hero-foot .kpi-num .morph-icon .morph-path, .hero-foot .kpi-num .morph-icon .morph-flap { stroke: var(--on-deep); }
 .kpi-cell .kpi-label { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,245,242,0.75); margin-top: 12px; }
 .kpi-cell .kpi-sub { font-size: 13px; color: rgba(245,245,242,0.5); margin-top: 4px; }
