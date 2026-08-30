@@ -4,6 +4,8 @@
 .hero-top { display: grid; grid-template-columns: 1fr auto; gap: 32px; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; color: var(--brand); text-transform: uppercase; position: relative; }
 .hero-top .meta { display: flex; gap: 40px; flex-wrap: wrap; }
 .hero-top .meta span b { color: var(--brand); font-weight: 500; }
+.hero-loc { display: inline-flex; align-items: center; gap: 6px; justify-self: end; }
+.hero-loc svg { width: 11px; height: 13px; flex-shrink: 0; }
 .hero-main { display: grid; grid-template-columns: 1fr; gap: 80px; align-items: end; position: relative; margin-top: auto; padding-top: 1.2em; }
 @media (max-width: 900px) { .hero-main { grid-template-columns: 1fr; gap: 40px; } }
 .hero-name { font-family: var(--f-display); font-size: var(--t-hero); font-weight: 400; line-height: 0.9; color: var(--ink-deep); letter-spacing: -0.035em; }
