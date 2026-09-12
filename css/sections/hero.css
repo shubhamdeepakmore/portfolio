@@ -10,7 +10,8 @@
 @media (max-width: 900px) { .hero-main { grid-template-columns: 1fr; gap: 40px; } }
 .hero-name { font-family: var(--f-display); font-size: var(--t-hero); font-weight: 400; line-height: 0.9; color: var(--ink-deep); letter-spacing: -0.035em; }
 .hero-name .ital { font-style: italic; color: var(--ink); }
-.hero-tagline { margin-top: 28px; font-size: 19px; line-height: 1.5; color: var(--text); max-width: 850px; }
+.hero-lead { font-family: var(--f-display); font-style: italic; font-weight: 400; font-size: clamp(24px, 3vw, 40px); line-height: 1.25; letter-spacing: -0.01em; color: var(--brand); margin-top: 24px; max-width: 900px; }
+.hero-tagline { margin-top: 24px; font-size: 19px; line-height: 1.5; color: var(--text); max-width: 720px; }
 .hero-typer { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brand); margin-top: 20px; display: flex; align-items: center; gap: 10px; }
 .hero-typer::before { content: ">"; color: var(--ink-soft); }
 .caret { display: inline-block; width: 8px; height: 1.1em; background: var(--ink); margin-left: 4px; vertical-align: middle; animation: blink 1s steps(1) infinite; }
