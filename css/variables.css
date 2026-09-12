@@ -83,3 +83,16 @@
 
   color-scheme: dark;
 }
+
+/* Accessibility: honour reduced-motion for every animation/transition,
+   site-wide (this file is linked on every page). The number count-ups are
+   additionally short-circuited in js/animations.js, and the email→folder
+   morph checks this query directly in js/email-folder-morph.js. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

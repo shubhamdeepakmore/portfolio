@@ -55,7 +55,7 @@
 /* ── NUMBER COUNT EASING ──────────────────────────────────── */
 .counted { display: inline-block; }
 /* ── BUSINESS CARD ───────────────────────────────────────── */
-.bc-overlay { position: fixed; inset: 0; background: rgba(47,47,47,0.5); z-index: 400; opacity: 0; visibility: hidden; transition: opacity .3s; backdrop-filter: blur(4px); }
+.bc-overlay { position: fixed; inset: 0; background: rgba(47,47,47,0.5); z-index: 400; opacity: 0; visibility: hidden; transition: opacity .3s; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
 .bc-overlay.open { opacity: 1; visibility: visible; }
 .bc-wrap { position: fixed; top: 50%; left: 50%; z-index: 401; transform: translate(-50%, -50%) perspective(1000px) rotateX(8deg) scale(0.9); opacity: 0; visibility: hidden; transition: transform .4s cubic-bezier(.2,.8,.2,1), opacity .3s; }
 .bc-wrap.open { transform: translate(-50%, -50%) perspective(1000px) rotateX(0deg) scale(1); opacity: 1; visibility: visible; }

@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function(){
   const navBtn = document.getElementById('navCardBtn');
   if (!overlay || !wrap) return;
 
+  // Assemble the email link at runtime so the address isn't sitting in the
+  // page source for spam scrapers to harvest.
+  var emailLink = document.querySelector('.bc-back-icon[data-eu][data-ed]');
+  if (emailLink) {
+    emailLink.setAttribute('href', 'mailto:' + emailLink.dataset.eu + '@' + emailLink.dataset.ed);
+  }
+
   function openCard() {
     overlay.classList.add('open');
     wrap.classList.add('open');

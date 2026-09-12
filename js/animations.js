@@ -34,6 +34,11 @@
 
   const counters = document.querySelectorAll('.counted');
   if (!counters.length) return;
+  // Reduced motion: show final values immediately, skip the count-up.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    counters.forEach(el => { el.textContent = (el.dataset.target || el.textContent) + (el.dataset.suffix || ''); });
+    return;
+  }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting && !entry.target.dataset.animated) {
