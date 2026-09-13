@@ -35,7 +35,7 @@
 
   let currentProj = 'all';
   const line = 'rgba(244,245,240,0.1)';
-  const th = 'font-family:var(--f-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,245,240,0.5);text-align:left;padding:8px 10px;border-bottom:1px solid '+line+';font-weight:400;';
+  const th = 'font-family:var(--f-mono);font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,245,240,0.85);text-align:left;padding:8px 10px;border-bottom:1px solid '+line+';font-weight:400;';
   const td = 'padding:10px;border-bottom:1px solid rgba(244,245,240,0.06);color:rgba(244,245,240,0.85);vertical-align:middle;';
   const mono = 'font-family:var(--f-mono);font-size:11px;';
 
@@ -49,7 +49,7 @@
     return m[s.replace(/\s/g,'')] || '';
   }
   function statusLabel(s){ return s.replace(/([A-Z])/g,' $1').trim(); }
-  function fmtVar(v){ return v===0?'<span style="color:rgba(244,245,240,0.4)">0d</span>':v>0?'<span style="color:#E07B7B">+'+v+'d</span>':'<span style="color:#6FD196">'+v+'d</span>'; }
+  function fmtVar(v){ return v===0?'<span style="color:rgba(244,245,240,0.85)">0d</span>':v>0?'<span style="color:#E07B7B">+'+v+'d</span>':'<span style="color:#6FD196">'+v+'d</span>'; }
 
   function buildBurndown(pk){
     const ps = pk==='all'?Object.values(projects):[projects[pk]];
@@ -79,7 +79,7 @@
       {l:'Milestones On Track', v:Math.round(ms)+'%', sub:'this quarter', c:ragColor(ms/100)},
       {l:'Budget Used',    v:Math.round(budget)+'%', sub:'of approved',  c:'var(--on-deep)'}
     ];
-    document.getElementById('dash-kpis').innerHTML = items.map(k=>'<div style="background:rgba(244,245,240,0.03);border:1px solid rgba(244,245,240,0.14);border-radius:4px;padding:16px;"><div style="'+mono+'font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,245,240,0.5);margin-bottom:8px;">'+k.l+'</div><div style="font-family:var(--f-display);font-size:26px;font-weight:400;color:'+k.c+';line-height:1;">'+k.v+'</div><div style="'+mono+'font-size:10px;color:rgba(244,245,240,0.4);margin-top:6px;">'+k.sub+'</div></div>').join('');
+    document.getElementById('dash-kpis').innerHTML = items.map(k=>'<div style="background:rgba(244,245,240,0.03);border:1px solid rgba(244,245,240,0.14);border-radius:4px;padding:16px;"><div style="'+mono+'font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,245,240,0.85);margin-bottom:8px;">'+k.l+'</div><div style="font-family:var(--f-display);font-size:26px;font-weight:400;color:'+k.c+';line-height:1;">'+k.v+'</div><div style="'+mono+'font-size:10px;color:rgba(244,245,240,0.85);margin-top:6px;">'+k.sub+'</div></div>').join('');
   }
 
   function renderBurndown(){
@@ -139,16 +139,16 @@
     const ragCSS = r=>({R:'background:#E07B7B;color:#4a0e0e',A:'background:#E8B25C;color:#3d2300',G:'background:#6FD196;color:#0a3a1f'}[r]||'');
     document.getElementById('raid-head').innerHTML = '<tr><th style="'+th+'">ID</th><th style="'+th+'">Type</th><th style="'+th+'">Title</th><th style="'+th+'text-align:center;">RAG</th></tr>';
     document.getElementById('raid-body').innerHTML = rows.length===0
-      ? '<tr><td colspan="4" style="'+td+'text-align:center;color:rgba(244,245,240,0.4);">No items</td></tr>'
-      : rows.map(r=>'<tr><td style="'+td+mono+'color:rgba(244,245,240,0.5);">'+r.id+'</td><td style="'+td+'">'+r.type+'</td><td style="'+td+'">'+r.title+'</td><td style="'+td+'text-align:center;"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;font-family:var(--f-mono);font-size:11px;font-weight:500;text-align:center;line-height:22px;'+ragCSS(r.rag)+'">'+r.rag+'</span></td></tr>').join('');
+      ? '<tr><td colspan="4" style="'+td+'text-align:center;color:rgba(244,245,240,0.85);">No items</td></tr>'
+      : rows.map(r=>'<tr><td style="'+td+mono+'color:rgba(244,245,240,0.85);">'+r.id+'</td><td style="'+td+'">'+r.type+'</td><td style="'+td+'">'+r.title+'</td><td style="'+td+'text-align:center;"><span style="display:inline-block;width:22px;height:22px;border-radius:50%;font-family:var(--f-mono);font-size:11px;font-weight:500;text-align:center;line-height:22px;'+ragCSS(r.rag)+'">'+r.rag+'</span></td></tr>').join('');
   }
 
   function renderMilestones(){
     const rows = currentProj==='all' ? milestonesAll : milestonesAll.filter(m=>m.proj===currentProj);
     document.getElementById('ms-head').innerHTML = '<tr><th style="'+th+'">Project</th><th style="'+th+'">Milestone</th><th style="'+th+'">Baseline</th><th style="'+th+'">Forecast</th><th style="'+th+'text-align:center;">Variance</th><th style="'+th+'">Status</th></tr>';
     document.getElementById('ms-body').innerHTML = rows.length===0
-      ? '<tr><td colspan="6" style="'+td+'text-align:center;color:rgba(244,245,240,0.4);">No milestones</td></tr>'
-      : rows.map(m=>'<tr><td style="'+td+'color:rgba(244,245,240,0.55);">'+m.proj+'</td><td style="'+td+'">'+m.name+'</td><td style="'+td+mono+'">'+m.baseline+'</td><td style="'+td+mono+'">'+m.forecast+'</td><td style="'+td+mono+'text-align:center;">'+fmtVar(m.variance)+'</td><td style="'+td+'"><span style="font-family:var(--f-mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;display:inline-block;'+statusCSS(m.status)+'">'+statusLabel(m.status)+'</span></td></tr>').join('');
+      ? '<tr><td colspan="6" style="'+td+'text-align:center;color:rgba(244,245,240,0.85);">No milestones</td></tr>'
+      : rows.map(m=>'<tr><td style="'+td+'color:rgba(244,245,240,0.85);">'+m.proj+'</td><td style="'+td+'">'+m.name+'</td><td style="'+td+mono+'">'+m.baseline+'</td><td style="'+td+mono+'">'+m.forecast+'</td><td style="'+td+mono+'text-align:center;">'+fmtVar(m.variance)+'</td><td style="'+td+'"><span style="font-family:var(--f-mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;display:inline-block;'+statusCSS(m.status)+'">'+statusLabel(m.status)+'</span></td></tr>').join('');
   }
 
   function render(){ renderKPIs(); renderBurndown(); renderRAID(); renderMilestones(); }
@@ -176,6 +176,6 @@
   } catch(err) {
     console.error('Dashboard error:', err);
     const wrap = document.getElementById('burnChartWrap');
-    if(wrap) wrap.innerHTML = '<div style="padding:40px;color:rgba(244,245,240,0.5);font-family:monospace;font-size:12px;text-align:center;">Dashboard error: ' + err.message + '</div>';
+    if(wrap) wrap.innerHTML = '<div style="padding:40px;color:rgba(244,245,240,0.85);font-family:monospace;font-size:12px;text-align:center;">Dashboard error: ' + err.message + '</div>';
   }
 })();

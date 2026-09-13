@@ -6,7 +6,7 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-.mono { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.02em; text-transform: uppercase; color: #A8BBA2; }
+.mono { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted-olive); }
 .eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brand); display: none; }
 .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--ink); display: inline-block; }
 

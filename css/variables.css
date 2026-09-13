@@ -10,7 +10,7 @@
   --paper-warm: #DAD7CD;     /* Stone — card / tile surfaces */
   --surface: #F5F5F2;
   --text: #2F2F2F;           /* Graphite body text */
-  --text-dim: #B7A99A;       /* Taupe */
+  --text-dim: #5F564B;       /* Taupe (darkened to meet WCAG AA on light backgrounds) */
   --line: #DAD7CD;           /* Stone borders */
   --line-soft: #E8E6E1;
   --accent: #A8BBA2;         /* Sage */
@@ -22,7 +22,7 @@
   --surface-deep: #3D4A35;   /* Dark Olive — dashboard panels, timeline cards, KPI band */
   --surface-deep-hi: #4A5A3F;/* lifted olive — active timeline card */
   --brand: #3D4A35;          /* Dark Olive used as TEXT / borders (nav links, labels, idx) */
-  --muted-olive: #6B7B5E;    /* soft olive detail text */
+  --muted-olive: #4C5741;    /* soft olive detail text (darkened to meet WCAG AA) */
   --on-deep: #F5F5F2;        /* light text that sits ON dark-olive surfaces (constant) */
   --label-on-deep: #DAD7CD;  /* muted stone label on dark-olive surfaces */
   --nav-bg: rgba(244,245,240,0.78);   /* frosted nav bar background */

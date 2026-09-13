@@ -3,6 +3,6 @@
 @media (max-width: 600px) { .int-list { grid-template-columns: 1fr; } }
 .int-item { background: var(--interest-bg); border-radius: 6px; padding: 52px 48px; display: flex; flex-direction: column; transition: filter .2s; min-height: 300px; }
 .int-item:hover { filter: brightness(0.96); }
-.int-item .int-idx { font-family: var(--f-mono); font-size: 11px; color: #A8BBA2; margin-bottom: 16px; }
+.int-item .int-idx { font-family: var(--f-mono); font-size: 11px; color: var(--muted-olive); margin-bottom: 16px; }
 .int-item .int-label { font-family: var(--f-display); font-size: 28px; font-weight: 500; color: var(--brand); line-height: 1.2; margin-bottom: 18px; }
 .int-item .int-detail { font-size: 15px; color: var(--muted-olive); line-height: 1.65; }
